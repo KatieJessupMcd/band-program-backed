@@ -68,3 +68,5 @@ end
 gem "graphql", "~> 2.0"
 gem "graphiql-rails", group: :development
 gem "rspec-rails", group: [:development, :test]
+gem "shoulda-matchers", group: [:development, :test]
+gem "database_cleaner", group: [:development, :test]
