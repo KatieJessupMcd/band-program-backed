@@ -18,5 +18,11 @@ module Types
     def schools
       School.all
     end
+
+    field :ensembles, [Types::EnsembleType], null: false, description: "Return a list of ensembles"
+
+    def ensembles
+      Ensemble.all
+    end
   end
 end
