@@ -25,6 +25,11 @@ RSpec.describe Student, :type => :model do
       subject.last_name = nil
       expect(subject).to_not be_valid
     end
+
+    it "is not valid without a grade" do
+      subject.grade = nil
+      expect(subject).to_not be_valid
+    end
   end
 
   describe "Associations" do 
