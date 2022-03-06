@@ -7,6 +7,7 @@ RSpec.describe Student, :type => :model do
     described_class.new(
       first_name: "Link",
       last_name: "Tothepast",
+      grade: 4,
       school_id: school.id
     )
   }
@@ -28,6 +29,16 @@ RSpec.describe Student, :type => :model do
 
     it "is not valid without a grade" do
       subject.grade = nil
+      expect(subject).to_not be_valid
+    end
+
+    it "is not valid if grade is below 4" do 
+      subject.grade = 1
+      expect(subject).to_not be_valid
+    end
+
+    it "is not valid if grade is above 12" do 
+      subject.grade = 13
       expect(subject).to_not be_valid
     end
   end
