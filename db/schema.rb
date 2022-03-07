@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_07_030640) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_07_032534) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_07_030640) do
     t.index ["student_id", "ensemble_id"], name: "index_ensembles_students_on_student_id_and_ensemble_id"
   end
 
-  create_table "music_libraries", force: :cascade do |t|
+  create_table "music_pieces", force: :cascade do |t|
     t.string "title"
     t.string "category"
     t.integer "difficulty"
@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_07_030640) do
     t.bigint "school_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["school_id"], name: "index_music_libraries_on_school_id"
+    t.index ["school_id"], name: "index_music_pieces_on_school_id"
   end
 
   create_table "schools", force: :cascade do |t|
@@ -68,6 +68,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_07_030640) do
   end
 
   add_foreign_key "ensembles", "schools"
-  add_foreign_key "music_libraries", "schools"
+  add_foreign_key "music_pieces", "schools"
   add_foreign_key "students", "schools"
 end

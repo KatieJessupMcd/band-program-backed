@@ -7,12 +7,21 @@ RSpec.describe School, :type => :model do
     )
   }
 
-  it "is valid with valid attributes" do
-    expect(subject).to be_valid
+  describe "Validations" do 
+    it "is valid with valid attributes" do
+      expect(subject).to be_valid
+    end
+
+    it "is not valid without a name" do 
+      subject.name = nil
+      expect(subject).to_not be_valid
+    end 
   end
 
-  it "is not valid without a name" do 
-    subject.name = nil
-    expect(subject).to_not be_valid
-  end 
+  describe "Associations" do 
+    it {should have_many(:music_pieces)}
+    it {should have_many(:students)}
+  end
+
+  
 end

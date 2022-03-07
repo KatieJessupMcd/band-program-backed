@@ -2,7 +2,6 @@ module Types
   class QueryType < Types::BaseObject
     # Add `node(id: ID!) and `nodes(ids: [ID!]!)`
     include GraphQL::Types::Relay::HasNodeField
-    include GraphQL::Types::Relay::HasNodesField
 
     field :students, 
     [Types::StudentType],
@@ -23,6 +22,12 @@ module Types
 
     def ensembles
       Ensemble.all
+    end
+
+    field :music_pieces, [Types::MusicPieceType], null: false, description: "Return a list of music pieces"
+
+    def music_pieces
+      MusicPiece.all
     end
   end
 end

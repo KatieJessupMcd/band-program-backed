@@ -178,3 +178,20 @@ Ensemble.create(
     
   ]
 )
+
+MusicPiece.create(
+  [
+    {
+      title: "Air for Band", 
+      school: malcolm_middle
+    }, 
+    {
+      title: "Wagon Trail", 
+      school: malcolm_middle
+    },
+    {
+      title: "Kentucky 1800", 
+      school: uncanny_valley_high
+    }
+  ]
+)

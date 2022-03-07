@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe MusicLibrary, :type => :model do
+RSpec.describe MusicPiece, :type => :model do
   let(:school) { School.create(name: "test")}
 
   subject {
     described_class.new(
       title: "Test Title",
-      category: "Tothepast",
+      category: "test category",
       difficulty: 4,
       composer: "composer", 
       arranger: "arranger", 
