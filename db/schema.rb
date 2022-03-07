@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_06_230610) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_07_030640) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_06_230610) do
     t.bigint "ensemble_id", null: false
     t.index ["ensemble_id", "student_id"], name: "index_ensembles_students_on_ensemble_id_and_student_id"
     t.index ["student_id", "ensemble_id"], name: "index_ensembles_students_on_student_id_and_ensemble_id"
+  end
+
+  create_table "music_libraries", force: :cascade do |t|
+    t.string "title"
+    t.string "category"
+    t.integer "difficulty"
+    t.string "composer"
+    t.string "arranger"
+    t.string "publisher"
+    t.string "genre"
+    t.boolean "is_hard_copy"
+    t.boolean "is_digital"
+    t.boolean "is_out_of_print"
+    t.decimal "purchase_price"
+    t.date "acquisition_date"
+    t.integer "serial_number"
+    t.bigint "school_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_id"], name: "index_music_libraries_on_school_id"
   end
 
   create_table "schools", force: :cascade do |t|
@@ -48,5 +68,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_06_230610) do
   end
 
   add_foreign_key "ensembles", "schools"
+  add_foreign_key "music_libraries", "schools"
   add_foreign_key "students", "schools"
 end
