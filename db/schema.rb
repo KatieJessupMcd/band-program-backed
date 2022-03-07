@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_07_061018) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_07_073614) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,6 +29,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_07_061018) do
     t.index ["student_id", "ensemble_id"], name: "index_ensembles_students_on_student_id_and_ensemble_id"
   end
 
+  create_table "instrument_families", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "instrument_inventory_items", force: :cascade do |t|
     t.integer "condition"
     t.date "date_bought"
@@ -39,6 +45,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_07_061018) do
     t.bigint "school_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "instrument_type_id"
+    t.index ["instrument_type_id"], name: "index_instrument_inventory_items_on_instrument_type_id"
     t.index ["school_id"], name: "index_instrument_inventory_items_on_school_id"
   end
 
@@ -47,6 +55,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_07_061018) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "students_id"
+    t.bigint "instrument_family_id"
+    t.index ["instrument_family_id"], name: "index_instrument_types_on_instrument_family_id"
     t.index ["students_id"], name: "index_instrument_types_on_students_id"
   end
 
@@ -91,7 +101,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_07_061018) do
   end
 
   add_foreign_key "ensembles", "schools"
+  add_foreign_key "instrument_inventory_items", "instrument_types"
   add_foreign_key "instrument_inventory_items", "schools"
+  add_foreign_key "instrument_types", "instrument_families"
   add_foreign_key "instrument_types", "students", column: "students_id"
   add_foreign_key "music_pieces", "schools"
   add_foreign_key "students", "instrument_types"

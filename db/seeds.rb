@@ -18,36 +18,56 @@ malcolm_middle = School.create!(
   highest_grade: 8
 )
 
+woodwind_family = InstrumentFamily.create!(
+  name: "woodwind"
+)
+
+brass_family = InstrumentFamily.create!(
+  name: "brass"
+)
+
+percussion_family = InstrumentFamily.create!(
+  name: "percussion"
+)
+
 oboe = InstrumentType.create!(
-  name: "oboe"
+  name: "oboe", 
+  instrument_family_id: woodwind_family.id
 )
 
 flute = InstrumentType.create!(
-  name: "flute"
+  name: "flute", 
+  instrument_family_id: woodwind_family.id
 )
 
 clarinet = InstrumentType.create!(
-  name: "clarinet"
+  name: "clarinet", 
+  instrument_family_id: woodwind_family.id
 )
 
 alto_saxophone = InstrumentType.create!(
-  name: "alto saxophone"
+  name: "alto saxophone", 
+  instrument_family_id: woodwind_family.id
 )
 
 trumpet = InstrumentType.create!(
-  name: "trumpet"
+  name: "trumpet", 
+  instrument_family_id: brass_family.id
 )
 
 trombone = InstrumentType.create!(
-  name: "trombone"
+  name: "trombone", 
+  instrument_family_id: brass_family.id
 )
 
 euphonium = InstrumentType.create!(
-  name: "euphonium"
+  name: "euphonium", 
+  instrument_family_id: brass_family.id
 )
 
 tuba = InstrumentType.create!(
-  name: "tuba"
+  name: "tuba", 
+  instrument_family_id: brass_family.id
 )
 
 student1 = Student.create!(

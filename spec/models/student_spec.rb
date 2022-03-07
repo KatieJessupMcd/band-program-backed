@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Student, :type => :model do
   let(:school) { School.create(name: "test")}
-  let(:instrument_type) { InstrumentType.create(name: "trumpet") }
+  let(:instrument_family) { InstrumentFamily.create(name: "brass")}
+  let(:instrument_type) { InstrumentType.create(name: "trumpet", instrument_family_id: instrument_family.id) }
 
   subject {
     described_class.new(

@@ -41,5 +41,12 @@ module Types
     def instrument_types
       InstrumentType.all
     end
+
+    field :instrument_families, [Types::InstrumentFamilyType], null: false, description: "Return a list of instrument families"
+
+    def instrument_families
+      InstrumentFamily.all
+    end
+
   end
 end
