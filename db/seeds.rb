@@ -195,3 +195,12 @@ MusicPiece.create(
     }
   ]
 )
+
+InstrumentInventoryItem.create!(
+  [
+    {
+    "condition": 4,
+    "school": uncanny_valley_high
+    }
+  ]
+)

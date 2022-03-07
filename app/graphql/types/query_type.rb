@@ -29,5 +29,11 @@ module Types
     def music_pieces
       MusicPiece.all
     end
+
+    field :instrument_inventory_items, [Types::InstrumentInventoryItemType], null: false, description: "Return a list of instrument inventory item"
+
+    def instrument_inventory_items
+      InstrumentInventoryItem.all
+    end
   end
 end

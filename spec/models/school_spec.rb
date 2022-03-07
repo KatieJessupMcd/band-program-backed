@@ -21,6 +21,7 @@ RSpec.describe School, :type => :model do
   describe "Associations" do 
     it {should have_many(:music_pieces)}
     it {should have_many(:students)}
+    it {should have_many(:instrument_inventory_items)}
   end
 
   
