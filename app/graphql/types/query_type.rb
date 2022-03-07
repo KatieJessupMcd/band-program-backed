@@ -35,5 +35,11 @@ module Types
     def instrument_inventory_items
       InstrumentInventoryItem.all
     end
+
+    field :instrument_types, [Types::InstrumentTypeType], null: false, description: "Return a list of instrument types"
+
+    def instrument_types
+      InstrumentType.all
+    end
   end
 end

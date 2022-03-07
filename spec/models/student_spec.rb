@@ -2,13 +2,15 @@ require 'rails_helper'
 
 RSpec.describe Student, :type => :model do
   let(:school) { School.create(name: "test")}
+  let(:instrument_type) { InstrumentType.create(name: "trumpet") }
 
   subject {
     described_class.new(
       first_name: "Link",
       last_name: "Tothepast",
       grade: 4,
-      school_id: school.id
+      school_id: school.id,
+      instrument_type_id: instrument_type.id
     )
   }
 
@@ -45,5 +47,6 @@ RSpec.describe Student, :type => :model do
 
   describe "Associations" do 
     it { should belong_to(:school) }
+    it { should belong_to(:instrument_type)}
   end
 end

@@ -18,136 +18,201 @@ malcolm_middle = School.create!(
   highest_grade: 8
 )
 
+oboe = InstrumentType.create!(
+  name: "oboe"
+)
+
+flute = InstrumentType.create!(
+  name: "flute"
+)
+
+clarinet = InstrumentType.create!(
+  name: "clarinet"
+)
+
+alto_saxophone = InstrumentType.create!(
+  name: "alto saxophone"
+)
+
+trumpet = InstrumentType.create!(
+  name: "trumpet"
+)
+
+trombone = InstrumentType.create!(
+  name: "trombone"
+)
+
+euphonium = InstrumentType.create!(
+  name: "euphonium"
+)
+
+tuba = InstrumentType.create!(
+  name: "tuba"
+)
+
+student1 = Student.create!(
+    first_name: "Anne",
+      last_name: "Smith",
+      grade: 9, 
+      school: uncanny_valley_high,
+      instrument_type_id: oboe.id
+    ), 
+      
+
 Student.create!(
   [
     {
       first_name: "Nicole",
       last_name: "Byer",
       grade: 9, 
-      school: uncanny_valley_high
+      school: uncanny_valley_high,
+      instrument_type_id: flute.id
     },
     {
       first_name: "Sarah",
       last_name: "Millican",
       grade: 9,
-      school: uncanny_valley_high
+      school: uncanny_valley_high,
+      instrument_type_id: clarinet.id
+
     },
     {
       first_name: "Jane",
       last_name: "Doe",
       grade: 9, 
-      school: uncanny_valley_high
+      school: uncanny_valley_high,
+      instrument_type_id: trumpet.id
     },
     {
       first_name: "Bob",
       last_name: "Ross",
       grade: 10, 
-      school: uncanny_valley_high
+      school: uncanny_valley_high,
+      instrument_type_id: trombone.id
     },
     {
       first_name: "Rachel",
       last_name: "Riley",
       grade: 10,
-      school: uncanny_valley_high
+      school: uncanny_valley_high,
+      instrument_type_id: euphonium.id
     },
     {
       first_name: "Jimmy",
       last_name: "Carr",
       grade: 10, 
-      school: uncanny_valley_high
+      school: uncanny_valley_high,
+      instrument_type_id: tuba.id
     },
     {
       first_name: "Yoshi",
       last_name: "Egg",
       grade: 11, 
-      school: uncanny_valley_high
+      school: uncanny_valley_high,
+      instrument_type_id: alto_saxophone.id
     },
     {
       first_name: "Princess",
       last_name: "Peach",
       grade: 11,
-      school: uncanny_valley_high
+      school: uncanny_valley_high,
+      instrument_type_id: flute.id
     },
     {
       first_name: "Rick",
       last_name: "Roll",
       grade: 11, 
-      school: uncanny_valley_high
+      school: uncanny_valley_high,
+      instrument_type_id: clarinet.id
     },
     {
       first_name: "Bob",
       last_name: "Marley",
       grade: 12, 
-      school: uncanny_valley_high
+      school: uncanny_valley_high,
+      instrument_type_id: oboe.id
     },
     {
       first_name: "Joe",
       last_name: "Exotic",
       grade: 12,
-      school: uncanny_valley_high
+      school: uncanny_valley_high,
+      instrument_type_id: trumpet.id
     },
     {
       first_name: "Pam",
       last_name: "Anderson",
       grade: 12, 
-      school: uncanny_valley_high
+      school: uncanny_valley_high,
+      instrument_type_id: trombone.id
     },
     {
       first_name: "Abby",
       last_name: "Road",
       grade: 6, 
-      school: malcolm_middle
+      school: malcolm_middle,
+      instrument_type_id: euphonium.id
     },
     {
       first_name: "John",
       last_name: "Carpenter",
       grade: 6,
-      school: malcolm_middle
+      school: malcolm_middle,
+      instrument_type_id: tuba.id
     },
     {
       first_name: "Guster",
       last_name: "Wind",
       grade: 6,
-      school: malcolm_middle
+      school: malcolm_middle,
+      instrument_type_id: oboe.id
     },
     {
       first_name: "Parks",
       last_name: "Andrec",
       grade: 7,
-      school: malcolm_middle
+      school: malcolm_middle,
+      instrument_type_id: clarinet.id
     },
     {
       first_name: "Whoseline",
       last_name: "Isitanyway",
       grade: 7,
-      school: malcolm_middle
+      school: malcolm_middle,
+      instrument_type_id: alto_saxophone.id
     },
     {
       first_name: "Stinky",
       last_name: "Pete",
       grade: 8,
-      school: malcolm_middle
+      school: malcolm_middle,
+      instrument_type_id: trumpet.id
     },
     {
       first_name: "Jack",
       last_name: "Benimble",
        grade: 8,
-      school: malcolm_middle
+      school: malcolm_middle,
+      instrument_type_id: trombone.id
     },
     {
       first_name: "Jack",
       last_name: "Bequick",
       grade: 8,
-      school: malcolm_middle
+      school: malcolm_middle,
+      instrument_type_id: tuba.id
     },
     {
       first_name: "Lego",
       last_name: "Myeggo",
       grade: 8,
-      school: malcolm_middle
+      school: malcolm_middle,
+      instrument_type_id: oboe.id
     },
   ]
 )
+
+
 
 Ensemble.create(
   [

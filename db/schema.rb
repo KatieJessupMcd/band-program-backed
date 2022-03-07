@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_07_050229) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_07_061018) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,6 +40,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_07_050229) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["school_id"], name: "index_instrument_inventory_items_on_school_id"
+  end
+
+  create_table "instrument_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "students_id"
+    t.index ["students_id"], name: "index_instrument_types_on_students_id"
   end
 
   create_table "music_pieces", force: :cascade do |t|
@@ -77,11 +85,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_07_050229) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "grade"
+    t.bigint "instrument_type_id"
+    t.index ["instrument_type_id"], name: "index_students_on_instrument_type_id"
     t.index ["school_id"], name: "index_students_on_school_id"
   end
 
   add_foreign_key "ensembles", "schools"
   add_foreign_key "instrument_inventory_items", "schools"
+  add_foreign_key "instrument_types", "students", column: "students_id"
   add_foreign_key "music_pieces", "schools"
+  add_foreign_key "students", "instrument_types"
   add_foreign_key "students", "schools"
 end
