@@ -284,8 +284,9 @@ MusicPiece.create(
 InstrumentInventoryItem.create!(
   [
     {
-    "condition": 4,
-    "school": uncanny_valley_high
+    condition: 4,
+    school: uncanny_valley_high, 
+    instrument_type_id: clarinet.id
     }
   ]
 )

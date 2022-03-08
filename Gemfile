@@ -70,3 +70,4 @@ gem "graphiql-rails", group: :development
 gem "rspec-rails", group: [:development, :test]
 gem "shoulda-matchers", group: [:development, :test]
 gem "database_cleaner", group: [:development, :test]
+gem "rack-cors"
