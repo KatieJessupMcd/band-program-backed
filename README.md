@@ -102,6 +102,6 @@ Here is a diagram of the models as they stand today:
 - Currently, students are only associated with an instrument type, not an instrument inventory item. Essentially, there is currently not a way to represent a student renting a school instrument, which is quite common. Building this relationship would be good to have.
 - Testing for the GraphQL component of the API
 - Testing around business behavior, rather than just testing validations and associations
-- Mutations, I'm missing the CUD of crud (can currently only read). I've implemented mutations on my other practice projects, but haven't done so in this project yet
+- Mutations, I'm missing the CUD of crud (can currently only read). I've implemented mutations on my other practice projects, but haven't done so in this project yet. I can jump into the rails console in the meantime to update or destroy records until I put the rest of CRUD in place
 - Adding in the additional models I have in my Google doc
 - More helper methods on the models and the GraphQL server, to take full advantage of the GraphQL-ness of being able to query for exactly what I need, so I want to ensure that my backend can provide for that ask, ie "give me all the six and seventh graders that play a woodwind instrument at this school"
