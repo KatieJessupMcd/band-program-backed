@@ -14,10 +14,10 @@ It serves as an API to the [frontend of the project](https://github.com/KatieJes
 
 During my years as an elementary and middle school band director, there was a constant stream of challenges to solve. These included:
 
-- What music pieces do I have in the library for the 7th graders that is the correct difficulty level for them
-- I need a quick roster of how many clarinet players are in this school, and how many of those are sixth graders. Sixth graders are notorius for eating their reeds (only half joking 🙃) so need to make sure I order enough extra for the year
+- What music pieces do I have in the library for the 7th graders that are the correct difficulty level for them?
+- I need a quick roster of how many clarinet players are in this school, and how many of those are sixth graders? Sixth graders are notorius for eating their reeds (only half joking 🙃) so need to make sure I order enough extra for the year
 - I need data to show school admin why I need a certain budget to keep the school instrument inventory in working order. To do that, I need a way to track instrument condition, brand, and value
-- The fifth grade trumpets keep emptying their ~~spit valves~~ water valves in less than ideal places, how can I redirect that
+- The fifth grade trumpets keep emptying their ~~spit valves~~ water valves in less than ideal places, how can I redirect that?
 - For the spring concert, there are 2 different ensembles performing with 3 different grades across those ensembles. I need a quick way to pull that student contact information to notify parents and homeroom teachers of the upcoming schedule adjustments for rehearsals
 - And more!
 
