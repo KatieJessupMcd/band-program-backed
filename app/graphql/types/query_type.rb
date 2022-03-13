@@ -18,6 +18,15 @@ module Types
       School.all
     end
 
+    field :school, Types::SchoolType, null: true do
+      description "Find a school by ID"
+      argument :id, ID, required: true
+    end
+
+    def school(id:)
+      School.find(id)
+    end
+
     field :ensembles, [Types::EnsembleType], null: false, description: "Return a list of ensembles"
 
     def ensembles

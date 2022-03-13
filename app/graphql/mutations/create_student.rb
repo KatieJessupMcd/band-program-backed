@@ -1,9 +1,9 @@
 class Mutations::CreateStudent < Mutations::BaseMutation
   argument :first_name, String, required: true
   argument :last_name, String, required: true
-  argument :grade, Integer, required: true
-  argument :instrument_type_id, Integer, required: true
-  argument :school_id, Integer, required: true
+  argument :grade, Int, required: true
+  argument :instrument_type_id, Int, required: true
+  argument :school_id, Int, required: true
 
   field :student, Types::StudentType, null: false
   field :errors, [String], null: false
